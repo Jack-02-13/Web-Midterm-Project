@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大學生存指南｜實用工具</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="head">
+    <div class="head-select">
+      <a class="head-name" href="index.html">大學生存指南</a>
+      <nav aria-label="主要導覽">
+        <ul class="head-links">
+          <li><a href="index.html">首頁</a></li>
+          <li><a href="study.html">課業指南</a></li>
+          <li><a href="life.html">生活指南</a></li>
+          <li><a class="current" href="tools.html">實用工具</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="eyebrow">小工具</p>
+      <h1>先試算，再做個小測驗</h1>
+      <p>第一個工具會扣掉三種支出，第二個是三題生活情境選擇題。</p>
+    </section>
+
+    <section class="content-section tool-panel" id="budget-calculator">
+      <p class="eyebrow">工具一</p>
+      <h2>生活費計算機</h2>
+      <p>金額都用元計。填完四格後按下按鈕；如果支出比預算多，也會顯示差額。</p>
+      <div class="field-grid">
+        <div class="form-field">
+          <label for="budget">每月預算（元）</label>
+          <input id="budget" type="text" inputmode="numeric" placeholder="例如：15000">
+        </div>
+        <div class="form-field">
+          <label for="food">伙食費（元）</label>
+          <input id="food" type="text" inputmode="numeric" placeholder="例如：6000">
+        </div>
+        <div class="form-field">
+          <label for="transport">交通費（元）</label>
+          <input id="transport" type="text" inputmode="numeric" placeholder="例如：1000">
+        </div>
+        <div class="form-field">
+          <label for="other">其他支出（元）</label>
+          <input id="other" type="text" inputmode="numeric" placeholder="例如：2500">
+        </div>
+      </div>
+      <button class="button" type="button" onclick="calculateBudget()">計算剩餘金額</button>
+      <p class="tool-result" id="budgetResult" aria-live="polite">填寫金額後按下按鈕。</p>
+    </section>
+
+    <section class="content-section tool-panel" id="campus-quiz">
+      <p class="eyebrow">工具二</p>
+      <h2>校園知識測驗</h2>
+      <p>選一個你覺得比較合適的做法。沒選的題目會算錯，可以再試一次。</p>
+
+      <div class="quiz-question">
+        <label for="quiz1">1. 遇到大型報告時，哪一種開始方式比較容易執行？</label>
+        <select id="quiz1">
+          <option value="">請選擇</option>
+          <option value="a">拆成幾個小步驟，先安排開始時間</option>
+          <option value="b">等到期限前一晚才一次完成</option>
+          <option value="c">先不看題目，之後再說</option>
+        </select>
+      </div>
+
+      <div class="quiz-question">
+        <label for="quiz2">2. 如果不確定作業要求，哪一種做法較合適？</label>
+        <select id="quiz2">
+          <option value="">請選擇</option>
+          <option value="a">完全靠猜測完成</option>
+          <option value="b">重新確認課程說明，必要時向老師或同學詢問</option>
+          <option value="c">直接放棄作業</option>
+        </select>
+      </div>
+
+      <div class="quiz-question">
+        <label for="quiz3">3. 想了解自己的生活費花去哪裡，可以先做什麼？</label>
+        <select id="quiz3">
+          <option value="">請選擇</option>
+          <option value="a">等到月底再憑印象猜</option>
+          <option value="b">完全不記錄任何支出</option>
+          <option value="c">先記下預算和日常支出</option>
+        </select>
+      </div>
+
+      <button class="button" type="button" onclick="checkQuiz()">查看測驗結果</button>
+      <p class="tool-result" id="quizResult" aria-live="polite">完成選擇後按下按鈕。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>網頁設計期中專題｜大學生存指南</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
